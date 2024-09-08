@@ -6,6 +6,7 @@
   <title>Interactive Attendance Calculator</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
   <style>
+    /* Add your styles here */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -132,6 +133,8 @@
     <div class="circle" style="width: 200px; height: 200px; top: 50%; left: 50%;"></div>
   </div>
 
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
       emailjs.init("gDlQOyPV_bBBj0n6j");  // Replace with your actual Public API Key
@@ -168,7 +171,7 @@
       if (email && attendanceReport) {
         emailjs.send('service_iqwjsup', 'template_z09yrka', {
           to_email: email,
-          from_name: 'Charan',
+          from_name: 'Your Name',
           message: attendanceReport,
           reply_to: email
         }).then(() => {
