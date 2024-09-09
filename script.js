@@ -29,6 +29,7 @@ const subjects = [
   { code: 'UBA49', name: 'Engineering Chemistry' },
 ];
 
+// Function to populate subjects dynamically
 function populateSubjects() {
   const subjectsList = document.getElementById('subjects-list');
   subjects.forEach(subject => {
@@ -53,6 +54,7 @@ function populateSubjects() {
   });
 }
 
+// Function to calculate subjects' CGPA and other details
 function calculateSubjects() {
   const gradePoints = {
     'S': 10,
@@ -115,6 +117,7 @@ function calculateSubjects() {
   `;
 }
 
+// Function to send email using EmailJS
 function sendEmail() {
   const email = document.getElementById('email').value;
   const resultDiv = document.getElementById('result').innerHTML;
@@ -129,7 +132,7 @@ function sendEmail() {
     subject_results: resultDiv,
   };
 
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+  emailjs.send('service_iqwjsup', 'template_z09yrka', templateParams)
     .then(function(response) {
       alert('Email sent successfully');
     }, function(error) {
@@ -137,6 +140,7 @@ function sendEmail() {
     });
 }
 
+// Function to create circles for background animation
 function createCircles() {
   const numCircles = 30; // Adjust the number of circles
   const container = document.querySelector('.background-animations');
