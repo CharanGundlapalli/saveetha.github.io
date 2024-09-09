@@ -132,7 +132,7 @@ function sendEmail() {
     subject_results: resultDiv,
   };
 
-  emailjs.send('service_iqwjsup', 'template_z09yrka', templateParams)
+  emailjs.send('service_iqwjsup', 'template_l93pids', templateParams)
     .then(function(response) {
       alert('Email sent successfully');
     }, function(error) {
