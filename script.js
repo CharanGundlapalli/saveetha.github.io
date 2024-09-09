@@ -33,8 +33,8 @@ function populateSubjects() {
   const subjectsList = document.getElementById('subjects-list');
   subjects.forEach(subject => {
     const select = document.createElement('select');
-    select.id = `subject-${subject.code}`;
-    select.innerHTML = `
+    select.id = subject-${subject.code};
+    select.innerHTML = 
       <option value="Not Completed">Not Completed</option>
       <option value="S">S</option>
       <option value="A">A</option>
@@ -43,9 +43,9 @@ function populateSubjects() {
       <option value="D">D</option>
       <option value="E">E</option>
       <option value="F">F</option>
-    `;
+    ;
     const label = document.createElement('label');
-    label.htmlFor = `subject-${subject.code}`;
+    label.htmlFor = subject-${subject.code};
     label.innerText = subject.name;
     subjectsList.appendChild(label);
     subjectsList.appendChild(select);
@@ -80,7 +80,7 @@ function calculateSubjects() {
   const remainingCourses = [];
 
   subjects.forEach(subject => {
-    const select = document.getElementById(`subject-${subject.code}`);
+    const select = document.getElementById(subject-${subject.code});
     const grade = select.value;
     if (grade === 'F') {
       failedCourses++;
@@ -99,7 +99,7 @@ function calculateSubjects() {
   const pendingCourses = gradeCounts['Not Completed'];
   const cgpa = (completedCourses > 0) ? (totalPoints / completedCourses) : 0;
 
-  document.getElementById('result').innerHTML = `
+  document.getElementById('result').innerHTML = 
     <h2>Results:</h2>
     <p>Total No. of S Grades: ${gradeCounts['S']}</p>
     <p>Total No. of A Grades: ${gradeCounts['A']}</p>
@@ -112,7 +112,7 @@ function calculateSubjects() {
     <p>CGPA: ${cgpa.toFixed(2)}</p>
     <h3>Remaining Courses:</h3>
     <p>${remainingCourses.join('<br>')}</p>
-  `;
+  ;
 }
 
 function sendEmail() {
@@ -129,7 +129,7 @@ function sendEmail() {
     subject_results: resultDiv,
   };
 
-  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+  emailjs.send('service_iqwjsup', 'template_sg6p3q5', templateParams)
     .then(function(response) {
       alert('Email sent successfully');
     }, function(error) {
@@ -143,10 +143,10 @@ function createCircles() {
   for (let i = 0; i < numCircles; i++) {
     const circle = document.createElement('div');
     circle.classList.add('circle');
-    circle.style.width = `${Math.random() * 60 + 20}px`; // Random size between 20px and 80px
+    circle.style.width = ${Math.random() * 60 + 20}px; // Random size between 20px and 80px
     circle.style.height = circle.style.width; // Maintain aspect ratio
-    circle.style.top = `${Math.random() * 100}vh`; // Random vertical position
-    circle.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+    circle.style.top = ${Math.random() * 100}vh; // Random vertical position
+    circle.style.left = ${Math.random() * 100}vw; // Random horizontal position
     container.appendChild(circle);
   }
 }
