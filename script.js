@@ -1,5 +1,5 @@
 // Initialize EmailJS with your public key
-emailjs.init("ZHa4F95mWXs_SmwCO"); // Replace with your public key
+emailjs.init("gDlQOyPV_bBBj0n6j"); // Replace with your public key
 
 const subjects = [
   { code: 'BTA01', name: 'Biology and Environmental Science for Engineers' },
