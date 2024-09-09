@@ -1,6 +1,3 @@
-// Initialize EmailJS with your public key
-emailjs.init("gDlQOyPV_bBBj0n6j"); // Replace with your actual public key
-
 const subjects = [
   { code: 'BTA01', name: 'Biology and Environmental Science for Engineers' },
   { code: 'CSA02', name: 'C Programming' },
@@ -128,16 +125,15 @@ function sendEmail() {
   }
 
   const templateParams = {
-    user_email: email,
+    email: email,
     subject_results: resultDiv,
   };
 
-  emailjs.send('service_iqwjsup', 'template_l93pids', templateParams)
+  emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
     .then(function(response) {
       alert('Email sent successfully');
     }, function(error) {
       alert('Failed to send email');
-      console.error('Email sending error:', error);
     });
 }
 
