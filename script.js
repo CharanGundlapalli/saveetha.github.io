@@ -2,7 +2,34 @@
 emailjs.init("gDlQOyPV_bBBj0n6j"); // Replace with your actual public key
 
 const subjects = [
-  // Your subjects array here
+  { code: 'BTA01', name: 'Biology and Environmental Science for Engineers' },
+  { code: 'CSA02', name: 'C Programming' },
+  { code: 'CSA03', name: 'Data Structure' },
+  { code: 'CSA04', name: 'Operating Systems' },
+  { code: 'CSA05', name: 'Database Management Systems' },
+  { code: 'CSA06', name: 'Design and Analysis Algorithm' },
+  { code: 'CSA07', name: 'Computer Networks' },
+  { code: 'CSA08', name: 'Python Programming' },
+  { code: 'CSA09', name: 'Programming in Java' },
+  { code: 'CSA10', name: 'Software Engineering' },
+  { code: 'CSA11', name: 'Object Oriented Analysis and Design' },
+  { code: 'CSA12', name: 'Computer Architecture' },
+  { code: 'CSA13', name: 'Theory of Computation' },
+  { code: 'CSA14', name: 'Compiler Design' },
+  { code: 'CSA15', name: 'Cloud Computing and Big Data Analytics' },
+  { code: 'CSA16', name: 'Data Warehouse and Data Mining' },
+  { code: 'CSA17', name: 'Artificial Intelligence' },
+  { code: 'CSA43', name: 'Internet Programming' },
+  { code: 'CSA51', name: 'Cryptography and Network Security' },
+  { code: 'DSA01', name: 'Object Oriented Programming with C++' },
+  { code: 'ECA10', name: 'Microprocessors and Microcontrollers' },
+  { code: 'ECA47', name: 'Principles of Digital System Design' },
+  { code: 'UBA01', name: 'Engineering Mathematics - I' },
+  { code: 'UBA04', name: 'Discrete Mathematics' },
+  { code: 'UBA09', name: 'Probability and Statistics' },
+  { code: 'UBA28', name: 'Professional Ethics and Legal Practices' },
+  { code: 'UBA48', name: 'Engineering Physics' },
+  { code: 'UBA49', name: 'Engineering Chemistry' },
 ];
 
 function populateSubjects() {
@@ -101,11 +128,9 @@ function sendEmail() {
   }
 
   const templateParams = {
-    user_email: email, // Ensure this matches the variable in your EmailJS template
-    subject_results: resultDiv, // Ensure this matches the variable in your EmailJS template
+    user_email: email,
+    subject_results: resultDiv,
   };
-
-  console.log('Sending email with params:', templateParams);
 
   emailjs.send('service_iqwjsup', 'template_l93pids', templateParams)
     .then(function(response) {
